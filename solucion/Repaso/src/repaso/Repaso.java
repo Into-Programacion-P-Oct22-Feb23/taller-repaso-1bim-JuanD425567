@@ -40,13 +40,13 @@ public class Repaso {
         total_matutina = 0;
         int descuento1;
         descuento1 = 0;
-        int total;
+        double total;
         total = 0;
         int subtotal;
         subtotal = 0;
         String mensaje;
         mensaje = "";
-        while (bandera = true) {
+        while (bandera == true) {
 
             System.out.println("Ingrese el nombre del empleado");
             nombre = entrada.nextLine();
@@ -76,14 +76,10 @@ public class Repaso {
                     + ""
                     + "Y con cedula " + cedula + "\n+" + "Horas matutinas "
                     + "trabajadas "
-                    + horas_matutinas + "\n" + "horas nocturnas "
-                    + "trabajadas "
-                    + horas_nocturnas + "\n" + "Subtotal " + subtotal + "\n" + 
-                    "Seguro "
-                    + "social " + seguro + "\n" + "total a cancelar " + total + 
-                    "\n";
+                    + horas_matutinas + "\n" + "horas nocturnas "+"trabajadas "
+                    + horas_nocturnas +"\n"+"Subtotal "+subtotal+"\n"+"Seguro "
+                    + "social "+seguro+"\n"+"total a cancelar "+total+"\n";
             numero_empleados = numero_empleados + 1;
-            entrada.nextLine();
             System.out.println("Ingrese la letra s para salir");
             opcion = entrada.nextLine();
             if (opcion.equals("s")) {
