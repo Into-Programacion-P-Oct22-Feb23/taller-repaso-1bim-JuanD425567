@@ -43,10 +43,10 @@ public class Repaso {
         int total;
         total = 0;
         int subtotal;
-        subtotal=0;
+        subtotal = 0;
         String mensaje;
-        mensaje="";
-        while (bandera == true) {
+        mensaje = "";
+        while (bandera = true) {
 
             System.out.println("Ingrese el nombre del empleado");
             nombre = entrada.nextLine();
@@ -62,28 +62,36 @@ public class Repaso {
 
             total_nocturna = horas_nocturnas * 15;
             total_matutina = horas_matutinas * 10;
-            subtotal = total_nocturna+total_matutina;
+            subtotal = total_nocturna + total_matutina;
             if (horas_nocturnas >= 10) {
                 descuento1 = (int) (total_nocturna * 0.10);
-                total_nocturna = total_nocturna+descuento1;
+                total_nocturna = total_nocturna + descuento1;
             }
-            total= total_matutina+total_nocturna;
-            
-            seguro= total*0.18;
-            mensaje = mensaje+"Rol del trabajador con nombre\t"+nombre+"\t"+""
-                    + "Y con"
-                    + "cedula\t"+ cedula+"\n+"+"Horas matutinas trabajadas\t"
-                    + horas_matutinas+"\n"+"horas nocturnas trabajadas\t"+
-                    horas_nocturnas+"\n"+"Subtotal\t"+subtotal+"\n"+"Seguro "
-                    + "social\t"+seguro+"\n"+"total a cancelar\t"+total;
+            total = total_matutina + total_nocturna;
+
+            seguro = total * 0.18;
+            total = (int) (total - seguro);
+
+            mensaje = mensaje + "Rol del trabajador con nombre " + nombre  
+                    + ""
+                    + "Y con cedula " + cedula + "\n+" + "Horas matutinas "
+                    + "trabajadas "
+                    + horas_matutinas + "\n" + "horas nocturnas "
+                    + "trabajadas "
+                    + horas_nocturnas + "\n" + "Subtotal " + subtotal + "\n" + 
+                    "Seguro "
+                    + "social " + seguro + "\n" + "total a cancelar " + total + 
+                    "\n";
+            numero_empleados = numero_empleados + 1;
+            entrada.nextLine();
             System.out.println("Ingrese la letra s para salir");
             opcion = entrada.nextLine();
-            if ("s".equals(opcion)) {
+            if (opcion.equals("s")) {
                 bandera = false;
             }
-            System.out.println(mensaje); 
         }
-
+        System.out.println(mensaje);
+        System.out.printf("Numero de empleados: " + numero_empleados);
     }
 
 }
